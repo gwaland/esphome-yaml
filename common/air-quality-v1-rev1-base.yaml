@@ -240,7 +240,7 @@ display:
     data_rate: 40000000
     model: 1.54inv2   # support black/white
     full_update_every: 360  # frequent refresh could damage the display
-    update_interval: 3s
+    update_interval: 60s    # increase display component update interval
     pages:
       - id: main_page
         lambda: |-
