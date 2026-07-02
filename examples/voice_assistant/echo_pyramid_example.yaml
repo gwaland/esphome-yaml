@@ -87,17 +87,9 @@ api:
   on_client_disconnected:
     - script.execute: draw_display
 
-ota:
-  - platform: esphome
-    password: "6cf9a68db5bb8db6e92a32723ef524cf"
-
 wifi:
   ssid: !secret wifi_ssid
   password: !secret wifi_password
-  
-  ap:
-    ssid: "Echo-Pyramid Fallback Hotspot"
-    password: "uSTvJjVzweZp"
 
   on_connect:
     - script.execute: draw_display
