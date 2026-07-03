@@ -80,7 +80,7 @@ psram:
 
 api:
   encryption:
-    key: "/Ic5szx8+gWlbthXuWg9cTq5RDkih1bl+vfhNfLDW2Q="
+    key: !secret api_encryption_key
 
   on_client_connected:
     - script.execute: draw_display
@@ -89,7 +89,7 @@ api:
 
 ota:
   - platform: esphome
-    password: "6cf9a68db5bb8db6e92a32723ef524cf"
+    password: !secret ota_password
 
 wifi:
   ssid: !secret wifi_ssid
@@ -97,7 +97,7 @@ wifi:
   
   ap:
     ssid: "Echo-Pyramid Fallback Hotspot"
-    password: "uSTvJjVzweZp"
+    password: !secret ap_password
 
   on_connect:
     - script.execute: draw_display
@@ -798,7 +798,9 @@ display:
       width: 128
       offset_width: 2
       offset_height: 1
-
+      pad_width: 2
+      pad_height: 1
+      
     invert_colors: true
     rotation: 180°
     pages:
